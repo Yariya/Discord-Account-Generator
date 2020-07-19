@@ -52,3 +52,7 @@ If you want keep bot online run `screen` before (`yum install screen`)
 
 ```
 **This is my first Project on GitHub! I hope you like it :)**
+
+
+I'm not responsible for what you do. This bot is made for educational purposes only.
+
