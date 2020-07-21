@@ -13,20 +13,20 @@ bot = commands.Bot(command_prefix=config.__prefix__)
 bot.remove_command('help')
 
 def get_total_accounts():
-    with open('./accounts/minecraft.txt', 'r') as minecraft:
+    with open('./minecraft.txt', 'r') as minecraft:
         minecraft_count_lines = len(minecraft.readlines())
 
-    with open('./accounts/nordvpn.txt', 'r') as nordvpn:
+    with open('./nordvpn.txt', 'r') as nordvpn:
         nordvpn_count_lines = len(nordvpn.readlines())
 
-    with open('./accounts/spotify.txt', 'r') as spotify:
+    with open('./spotify.txt', 'r') as spotify:
         spotify_count_lines = len(spotify.readlines())
 
-    with open('./accounts/origin.txt', 'r') as origin:
+    with open('./origin.txt', 'r') as origin:
         origin_count_lines = len(origin.readlines())
 
 
-    with open('./accounts/hulu.txt', 'r') as hulu:
+    with open('./hulu.txt', 'r') as hulu:
         hulu_count_lines = len(hulu.readlines())       
 
 
