@@ -16,8 +16,8 @@ class Commands(commands.Cog):
     async def premiumhelp_command(self, ctx):
         embed = discord.Embed(title='AccGenerator', description=''
         + '\n'
-        + '\n**AccGenerator by Yariya#0001**'
-        + '\n`!minecraft` - Generates an minecraft account (After Generating Deleted)'
+        + '\n**AccGenerator**'
+        + '\n`!minecraft` - Generates an minecraft account'
         + '\n`!nordvpn` - Generates an nordvpn account'
         + '\n`!origin` - Generates an origin account'
         + '\n`!spotify` - Generates an spotify account'
@@ -38,7 +38,7 @@ class Commands(commands.Cog):
     @commands.cooldown(1, (2.5 * 60), commands.BucketType.user)
     @commands.command('nordvpn', ignore_extra=False)
     async def nordvpn_command(self, ctx):
-        with open('./accounts/nordvpn.txt', 'r') as file:
+        with open('./nordvpn.txt', 'r') as file:
             file_lines = file.readlines()
             count_lines = len(file_lines)
 
@@ -59,7 +59,7 @@ class Commands(commands.Cog):
     @commands.cooldown(1, (2.5 * 60), commands.BucketType.user)
     @commands.command('spotify', ignore_extra=False)
     async def spotify_command(self, ctx):
-        with open('./accounts/spotify.txt', 'r') as file:
+        with open('./spotify.txt', 'r') as file:
             file_lines = file.readlines()
             count_lines = len(file_lines)
 
@@ -67,7 +67,7 @@ class Commands(commands.Cog):
         print(f'Currently there are {count_lines} accounts loaded.')
 
         if file is not None:
-            embed = discord.Embed(title=':white_check_mark: spotify Account generated!', description='Take a look in your direct messages, I sent you a spotify account! Accs not 100% working because spotify IP ban system', color=0x00ff00)
+            embed = discord.Embed(title=':white_check_mark: spotify Account generated!', description='Take a look in your direct messages, I sent you a spotify account!', color=0x00ff00)
             embed.set_footer(text=f'Requested by {ctx.author} on the {datetime.now().strftime("%m.%d.%Y")} at {datetime.now().strftime("%H:%M:%S")}.', icon_url=ctx.author.avatar_url)
             await ctx.send(embed=embed)
 
@@ -81,7 +81,7 @@ class Commands(commands.Cog):
     @commands.cooldown(1, (2.5 * 60), commands.BucketType.user)
     @commands.command('crunchyroll', ignore_extra=False)
     async def crunchyroll_command(self, ctx):
-        with open('./accounts/crunchyroll.txt', 'r') as file:
+        with open('./crunchyroll.txt', 'r') as file:
             file_lines = file.readlines()
             count_lines = len(file_lines)
 
@@ -103,7 +103,7 @@ class Commands(commands.Cog):
     @commands.cooldown(1, (2.5 * 60), commands.BucketType.user)
     @commands.command('hulu', ignore_extra=False)
     async def hulu_command(self, ctx):
-        with open('./accounts/hulu.txt', 'r') as file:
+        with open('./hulu.txt', 'r') as file:
             file_lines = file.readlines()
             count_lines = len(file_lines)
 
@@ -126,7 +126,7 @@ class Commands(commands.Cog):
     @commands.command('minecraft', ignore_extra=False)
     async def minecraft_command(self, ctx): 
     
-        with open('./accounts/minecraft.txt', 'r') as file:
+        with open('./minecraft.txt', 'r') as file:
             file_lines = file.readlines()
             count_lines = len(file_lines)
         
@@ -163,7 +163,7 @@ class Commands(commands.Cog):
     @commands.cooldown(1, (2.5 * 60), commands.BucketType.user)
     @commands.command('origin', ignore_extra=False)
     async def origin_command(self, ctx):
-        with open('./accounts/origin.txt', 'r') as file:
+        with open('./origin.txt', 'r') as file:
             file_lines = file.readlines()
             count_lines = len(file_lines)
 
@@ -184,22 +184,22 @@ class Commands(commands.Cog):
     @commands.guild_only()
     @commands.command('stock', ignore_extra=False)
     async def stock_command(self, ctx):
-        with open('./accounts/minecraft.txt', 'r') as minecraft:
+        with open('./minecraft.txt', 'r') as minecraft:
             minecraft_count_lines = len(minecraft.readlines())
 
-        with open('./accounts/spotify.txt', 'r') as spotify:
+        with open('./spotify.txt', 'r') as spotify:
             spotify_count_lines = len(spotify.readlines())
 
-        with open('./accounts/nordvpn.txt', 'r') as nordvpn:
+        with open('./nordvpn.txt', 'r') as nordvpn:
             nordvpn_count_lines = len(nordvpn.readlines())
 
-        with open('./accounts/mega.txt', 'r') as mega:
+        with open('./mega.txt', 'r') as mega:
             mega_count_lines = len(mega.readlines())
 
-        with open('./accounts/crunchyroll.txt', 'r') as crunchyroll:
+        with open('./crunchyroll.txt', 'r') as crunchyroll:
             crunchyroll_count_lines = len(crunchyroll.readlines()) 
 
-        with open('./accounts/hulu.txt', 'r') as hulu:
+        with open('./hulu.txt', 'r') as hulu:
             hulu_count_lines = len(hulu.readlines())       
             
   
