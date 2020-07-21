@@ -19,7 +19,6 @@ class Commands(commands.Cog):
         + '\n**AccGenerator**'
         + '\n`!minecraft` - Generates an minecraft account'
         + '\n`!nordvpn` - Generates an nordvpn account'
-        + '\n`!origin` - Generates an origin account'
         + '\n`!spotify` - Generates an spotify account'
         + '\n`!crunchyroll` - Generates crunchyroll account'
         + '\n`!hulu` - Generates an  hulu account'
@@ -157,30 +156,6 @@ class Commands(commands.Cog):
             print('It seems like the minecraft alt file isnt there.')
 
 
-
-
-    @commands.guild_only()
-    @commands.cooldown(1, (2.5 * 60), commands.BucketType.user)
-    @commands.command('origin', ignore_extra=False)
-    async def origin_command(self, ctx):
-        with open('./origin.txt', 'r') as file:
-            file_lines = file.readlines()
-            count_lines = len(file_lines)
-
-        random_alt = random.randint(0, count_lines)
-        print(f'Currently there are {count_lines} accounts loaded.')
-
-        if file is not None:
-            embed = discord.Embed(title=':white_check_mark: origin Account generated!', description='Take a look in your direct messages, I sent you a origin account!', color=0x00ff00)
-            embed.set_footer(text=f'Requested by {ctx.author} on the {datetime.now().strftime("%m.%d.%Y")} at {datetime.now().strftime("%H:%M:%S")}.', icon_url=ctx.author.avatar_url)
-            await ctx.send(embed=embed)
-
-            embed = discord.Embed(title=':white_check_mark: origin Account generated!', description=f'Account: `{file_lines[random_alt]}`', color=0x00ff00)
-            await ctx.author.send(embed=embed)
-        else:
-            print('It seems like the origin alt file isnt there.')
-
-
     @commands.guild_only()
     @commands.command('stock', ignore_extra=False)
     async def stock_command(self, ctx):
@@ -192,9 +167,6 @@ class Commands(commands.Cog):
 
         with open('./nordvpn.txt', 'r') as nordvpn:
             nordvpn_count_lines = len(nordvpn.readlines())
-
-        with open('./mega.txt', 'r') as mega:
-            mega_count_lines = len(mega.readlines())
 
         with open('./crunchyroll.txt', 'r') as crunchyroll:
             crunchyroll_count_lines = len(crunchyroll.readlines()) 
