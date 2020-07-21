@@ -145,7 +145,7 @@ class Commands(commands.Cog):
 
                 file_lines.pop(random_alt)
 
-                with open('./accounts/minecraft.txt', 'w') as file:
+                with open('./minecraft.txt', 'w') as file:
                     file.writelines(file_lines)
             else: #ANTICHECK - wenn es 0 is message
                 error_embed = discord.Embed(title=f':no_entry: Error: No Accounts in Database | AccGenerator by Yariya#0001',
