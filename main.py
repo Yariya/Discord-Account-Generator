@@ -22,8 +22,8 @@ def get_total_accounts():
     with open('./spotify.txt', 'r') as spotify:
         spotify_count_lines = len(spotify.readlines())
 
-    with open('./origin.txt', 'r') as origin:
-        origin_count_lines = len(origin.readlines())
+    with open('./crunchyroll.txt', 'r') as origin:
+        crunchyroll_count_lines = len(crunchyroll.readlines())
 
 
     with open('./hulu.txt', 'r') as hulu:
@@ -31,12 +31,12 @@ def get_total_accounts():
 
 
 
-    return minecraft_count_lines + nordvpn_count_lines + spotify_count_lines + origin_count_lines + hulu_count_lines
+    return minecraft_count_lines + nordvpn_count_lines + spotify_count_lines + crunchyroll_count_lines + hulu_count_lines
 
 async def auto_reload():
     await bot.wait_until_ready()
     while not bot.is_closed():
-        await bot.change_presence(status=discord.Status, activity=discord.Activity(name=f'{get_total_accounts()} accounts. | Yariya#0001', type=discord.ActivityType.watching))
+        await bot.change_presence(status=discord.Status, activity=discord.Activity(name=f'{get_total_accounts()} accounts.', type=discord.ActivityType.watching))
         await asyncio.sleep(10 * 60)
 
 @bot.event
