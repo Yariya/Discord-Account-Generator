@@ -1,5 +1,5 @@
 import discord
-
+import keep_alive
 import asyncio
 import os
 
@@ -37,5 +37,6 @@ async def on_ready():
     bot.load_extension("commands")
 
     print(f'Successfully logged in as {bot.user.name}!')
-
+    
+keep_alive.keep_alive()
 bot.run("token")
